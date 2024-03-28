@@ -12,7 +12,6 @@ const About = () => {
         </div>
           <h1 style={{textAlign:"center"}}>Our Creators</h1>
         <div className="container" style={{display:"flex",justifyContent:"center"}}>
-          <img src="" alt="No image" srcset="" style={{height:"50px",border:"2px solid black",borderRadius:"4px"}}/>
         </div>
         <Footer/>
     </div>

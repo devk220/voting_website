@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
@@ -38,16 +37,16 @@ const MainPage = () => {
     <Navbar/>
     <div className="container" style={{display:"flex",flexDirection:"row"}}>
       {party.map((item) => (
-        <div className="card mt-5" style={{ width: "18rem",height:"25rem" }} key={item.Name}>
+        <div className="card mt-5 mx-3" style={{ width: "18rem",height:"25rem",border:"2px solid black"}} key={item.Name}>
           <img src={item.image} className="card-img-top" alt="..." style={{height:"200px"}} />
-          <div className="card-body">
-            <h5 className="card-title">{item.Name}</h5>
-            <p className="card-text">
-              {item.Party}
-              <img src={item.Logo} alt={item.Party} style={{height:"100px"}}/>
+          <div className="card-body" style={{display:"flex",flexDirection:"column",alignItems:"center"}}>
+            <h4 className="card-title">{item.Name}</h4>
+            <p className="card-text" style={{display:"flex",flexDirection:"column",alignItems:"center"}}>
+              <img src={item.Logo} alt={item.Party} style={{height:"70px"}}/>
+              <h6>{item.Party}</h6>
             </p>
-            <button className="btn btn-primary">
-              Vote
+            <button className="btn btn-danger" style={{fontFamily:"sans-serif",fontWeight:"bolder",width:"8em"}}>
+              VOTE
             </button> 
           </div>
         </div>

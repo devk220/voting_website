@@ -61,7 +61,7 @@ const Verify = ({ loggedIn }) => {
   return (
     loggedIn ? (
       <div style={{ textAlign: 'center', marginTop: '20px' }}>
-        <h1>Webcam Capture</h1>
+        <h1>Verify Your Face</h1>
         <video ref={videoRef} width="640" height="480" autoPlay style={{ border: '1px solid #ccc', borderRadius: '5px' }}></video>
         <br />
         <button ref={captureButtonRef} style={{ marginTop: '10px', padding: '5px 10px', fontSize: '16px', backgroundColor: '#007bff', color: '#fff', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>Capture Image</button>

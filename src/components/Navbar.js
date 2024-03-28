@@ -7,8 +7,11 @@ const Navbar = ({loggedIn,handleLogout}) => {
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-          <Link className="navbar-brand" to="/"><img className='mx-2' src="https://play-lh.googleusercontent.com/3APi4HdWb0_rhnhAEoyJEYfSemXW9cNbA2VdOCSN7L6wgdjC_oTxLphER647R9PnSCkV" alt='' height="40px" style={{border:"2px solid red",borderRadius:"20px"}}/>Indian Voter's Portal</Link>
+      <nav className="navbar navbar-expand-lg" style={{ backgroundImage: "url('https://static.vecteezy.com/system/resources/thumbnails/020/933/072/small_2x/abstract-blur-gradient-background-vector.jpg')",backgroundRepeat:"no-repeat",backgroundSize:"cover"}}>
+          <Link className="navbar-brand" to="/"><img className='mx-2' src="https://play-lh.googleusercontent.com/3APi4HdWb0_rhnhAEoyJEYfSemXW9cNbA2VdOCSN7L6wgdjC_oTxLphER647R9PnSCkV" alt='' height="40px" style={{border:"2px solid brown",borderRadius:"20px"}}/>Indian Voter's Portal</Link>
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+          </button>
         <div className="container-fluid">
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <div className="container" style={{width:"55vw"}}>
