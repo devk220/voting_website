@@ -7,7 +7,7 @@ const mongo = require('mongoose')
 const multer=require('multer')
 const bcrypt=require('bcryptjs')
 
-const port=4000
+const port=process.env.port || 4000
 
 const app=express()
 

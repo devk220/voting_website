@@ -1,6 +1,6 @@
 const mongo=require('mongoose')
 
-const url='mongodb://127.0.0.1:27017'
+const url='mongodb+srv://dev450:19May2012%23@cluster0.xttif.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
 
 const connectToMongo=()=>{
     mongo.connect(url).then(()=>{
