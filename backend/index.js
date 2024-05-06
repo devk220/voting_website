@@ -11,7 +11,11 @@ const port=4000
 
 const app=express()
 
-app.use(cors())
+app.use(cors({
+    origin: "https://voting-website-frontend.vercel.app", // Allow requests only from this origin
+    methods: ["POST", "GET"], // Allow only specified methods
+    credentials: true // Allow credentials (cookies, authorization headers, etc.) to be included in requests
+  }));
 app.use(bodyParser.json())
 app.use('/signupUploads', express.static('signupUploads'));
 
