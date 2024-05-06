@@ -13,7 +13,7 @@ const app=express()
 
 app.use(cors(
     {
-        origin:["https://voting-website-frontend.vercel.app/"],
+        origin:["https://voting-website-frontend.vercel.app"],
         methods:["POST","GET"],
         credentials:true
     }
