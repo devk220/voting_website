@@ -16,6 +16,8 @@ const Signup = ({onClickHandler,show,hide,togg,visible}) => {
   const [pass, setPass] = useState("")
   const [file, setFile] = useState(null)
 
+  axios.defaults.withCredentials=true
+
   const fHandler=(e)=>{
     setFname(e.target.value)
   }

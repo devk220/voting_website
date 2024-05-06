@@ -14,6 +14,8 @@ const Login = ({handleLogin,onClickHandler,show,hide,togg,visible}) => {
   const [email, setEmail] = useState("")
   const [pass, setPass] = useState("")
 
+  axios.defaults.withCredentials=true
+
   const eHandler=(e)=>{
     setEmail(e.target.value)
   }
