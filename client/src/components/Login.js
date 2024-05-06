@@ -14,6 +14,8 @@ const Login = ({handleLogin,onClickHandler,show,hide,togg,visible}) => {
   const [email, setEmail] = useState("")
   const [pass, setPass] = useState("")
 
+  axios.defaults.withCredentials=true
+
   const eHandler=(e)=>{
     setEmail(e.target.value)
   }
@@ -23,8 +25,10 @@ const Login = ({handleLogin,onClickHandler,show,hide,togg,visible}) => {
   const sHandler = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("/signin", {
+      const response = await axios.post("https://voting-website-api.vercel.app/signin", {
         email, pass
+      }, {
+        withCredentials: true,
       });
   
       if (response.data.message === "success") {
