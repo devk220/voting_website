@@ -27,8 +27,6 @@ const Login = ({handleLogin,onClickHandler,show,hide,togg,visible}) => {
     try {
       const response = await axios.post("https://voting-website-api.vercel.app/signin", {
         email, pass
-      }, {
-        withCredentials: true,
       });
   
       if (response.data.message === "success") {

@@ -61,8 +61,7 @@ const Signup = ({onClickHandler,show,hide,togg,visible}) => {
 
     try {
         const response = await axios.post("https://voting-website-api.vercel.app/register", formData,{
-          headers:{"Content-Type":"multipart/form-data"},
-          withCredentials: true,
+          headers:{"Content-Type":"multipart/form-data"}
         });
         
         if (response.data.message === 'success') {
