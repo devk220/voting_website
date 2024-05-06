@@ -15,7 +15,7 @@ app.use(cors(
     {
         origin:["https://voting-website-frontend.vercel.app"],
         methods:["POST","GET"],
-        credentials:true
+        allowedHeaders: ['Content-Type'],
     }
 ))
 app.use(bodyParser.json())
