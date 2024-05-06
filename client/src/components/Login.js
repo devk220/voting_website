@@ -23,7 +23,7 @@ const Login = ({handleLogin,onClickHandler,show,hide,togg,visible}) => {
   const sHandler = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:4000/signin", {
+      const response = await axios.post("https://voting-website-api.vercel.app/signin", {
         email, pass
       });
   

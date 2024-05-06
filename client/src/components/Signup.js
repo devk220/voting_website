@@ -58,7 +58,7 @@ const Signup = ({onClickHandler,show,hide,togg,visible}) => {
     formData.append('file',file)
 
     try {
-        const response = await axios.post("http://localhost:4000/register", formData,{
+        const response = await axios.post("https://voting-website-api.vercel.app/register", formData,{
           headers:{"Content-Type":"multipart/form-data"}
         });
         
