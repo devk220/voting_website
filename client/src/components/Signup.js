@@ -16,8 +16,6 @@ const Signup = ({onClickHandler,show,hide,togg,visible}) => {
   const [pass, setPass] = useState("")
   const [file, setFile] = useState(null)
 
-  axios.defaults.withCredentials=true
-
   const fHandler=(e)=>{
     setFname(e.target.value)
   }
@@ -60,7 +58,7 @@ const Signup = ({onClickHandler,show,hide,togg,visible}) => {
     formData.append('file',file)
 
     try {
-        const response = await axios.post("https://voting-website-api.vercel.app/register", formData,{
+        const response = await axios.post("http://localhost:4000/register", formData,{
           headers:{"Content-Type":"multipart/form-data"}
         });
         

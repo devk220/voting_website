@@ -49,7 +49,7 @@ const Verify = ({ loggedIn }) => {
         const base64Image = users.image;
         formData.append('base64Image', base64Image);
 
-        fetch('https://voting-website-api.vercel.app/upload', {
+        fetch('http://127.0.0.1:5000/upload', {
           method: 'POST',
           body: formData
         })
@@ -58,7 +58,7 @@ const Verify = ({ loggedIn }) => {
             setIsVerifying(false);
 
             if (data.redirect) {
-              window.location.href = 'https://voting-website-api.vercel.app' + data.redirect;
+              window.location.href = 'http://localhost:3000' + data.redirect;
             }
           })
           .catch(error => {
