@@ -16,6 +16,11 @@ const schema=new mongo.Schema({
         unique:true,
         required:true
     },
+    epic:{
+        type:String,
+        unique:true,
+        required:true
+    },
     password:{
         type:String,
         minLength:8,

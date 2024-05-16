@@ -13,6 +13,7 @@ import CorrectFace from './components/CorrectFace';
 import Contact from './components/Contact';
 import About from './components/About';
 import Result from './components/Result';
+import ThankYou from './components/ThankYou';
 
 function App() {
 
@@ -70,6 +71,7 @@ function App() {
           <Route path='/result' element={<Result chartData={chartData}/>}/>
           <Route path='/errorface' element={<ErrorFace/>}/>
           <Route path='/correctface' element={<CorrectFace/>}/>
+          <Route path='/thankyou' element={<ThankYou/>}/>
         </Routes>
       </Router>
     </div>

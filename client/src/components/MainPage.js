@@ -1,6 +1,7 @@
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const MainPage = () => {
 
@@ -20,7 +21,7 @@ const MainPage = () => {
       image: "./images/Modi.webp",
       Name: "Narendra Modi",
       Party: "BJP",
-      Logo: "./images/BJP.jpg",
+      Logo: "./images/BJP.png",
     },
     {
       image: "./images/Mamata Banerjee.jpg",
@@ -42,6 +43,15 @@ const MainPage = () => {
     },
   ];
 
+  const navigate=useNavigate()
+
+  const onclickHandler=()=>{
+    if(window.confirm("Are you sure you wanna vote this candidate?"))
+      {
+        navigate('/thankyou')
+      }
+  }
+
   return (
     <>
     <Navbar/>
@@ -55,7 +65,7 @@ const MainPage = () => {
               <img src={item.Logo} alt={item.Party} style={{height:"70px"}}/>
               <h6>{item.Party}</h6>
             </p>
-            <button className="btn btn-danger" style={{fontFamily:"sans-serif",fontWeight:"bolder",width:"8em"}}>
+            <button className="btn btn-danger" style={{fontFamily:"sans-serif",fontWeight:"bolder",width:"8em"}} onClick={onclickHandler}>
               VOTE
             </button> 
           </div>

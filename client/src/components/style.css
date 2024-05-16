@@ -1,0 +1,57 @@
+ 
+  .container2 {
+    max-width: 400px;
+    margin: 0 auto; /* Center horizontally */
+    margin-top: 50px; /* Adjust top margin for vertical centering */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f0e6ff; /* Light lavender inside the container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow for contrast */
+  }
+  h1 {
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+  }
+  
+  .form-label2 {
+    font-weight: bold;
+  }
+  
+  .form-control2 {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: 100%;
+    box-sizing: border-box; /* Ensure padding is included in width */
+  }
+  
+  .form-control2:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  .link {
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  .link:hover {
+    text-decoration: underline;
+  }
+  

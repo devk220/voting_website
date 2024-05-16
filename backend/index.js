@@ -11,7 +11,6 @@ const port = 4000;
 
 const app = express();
 
-// Enable CORS for all routes
 app.use(cors());
 
 app.use(bodyParser.json());
@@ -22,13 +21,14 @@ connectToMongo();
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
-const addUser = async (fname, lname, email, pass, image) => {
+const addUser = async (fname, lname, email, epic , pass, image) => {
   const user = new mongo.model("user", schema);
 
   await user.create({
     firstname: fname,
     lastname: lname,
     email: email,
+    epic: epic,
     password: bcrypt.hashSync(pass, 12),
     image: image.toString('base64')
   });
@@ -39,6 +39,7 @@ app.post('/register', upload.single('file'), async (req, res) => {
     let fname = req.body.fname;
     let lname = req.body.lname;
     let email = req.body.email;
+    let epic = req.body.epic;
     let pass = req.body.pass;
     let image = req.file.buffer;
 
@@ -49,7 +50,7 @@ app.post('/register', upload.single('file'), async (req, res) => {
         message: "exists"
       });
     } else {
-      await addUser(fname, lname, email, pass, image);
+      await addUser(fname, lname, email, epic , pass, image);
 
       res.json({
         message: "success"
@@ -76,6 +77,7 @@ app.post('/signin', async (req, res) => {
           firstname: user.firstname,
           lastname: user.lastname,
           email: user.email,
+          epic: user.epic,
           image: user.image
         }
       });

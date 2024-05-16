@@ -31,6 +31,7 @@ const Profile = ({ user, loggedIn }) => {
         <img src={`data:image/jpg;base64,${users?.image}`} alt="Profile" style={{ height:'250px', border:'2px solid black', borderRadius:'80px' }} />
 
         <p style={{ fontWeight:"bolder",fontSize: '22px', marginTop: '20px' }}><strong style={{ fontSize: '28px'}} >Name:</strong> {users.firstname} {users.lastname}</p>
+        <p style={{ fontWeight:"bolder",fontSize: '22px', marginTop: '20px' }}><strong style={{ fontSize: '28px'}} >EPIC No.:</strong> {users.epic}</p>
         <p style={{ fontWeight:"bolder",fontSize: '22px', marginTop: '20px' }}><strong style={{ fontSize: '28px' }}>Email:</strong> {users.email}</p>
       </div>
       <Footer/>

@@ -79,7 +79,7 @@ const Verify = ({ loggedIn }) => {
       <div style={{ textAlign: 'center', marginTop: '20px' }}>
         {isVerifying ? (
           <>
-          <p>{verificationMessage}</p>
+          <p><h1>{verificationMessage}</h1></p>
           <img src="https://i.gifer.com/ZKZg.gif" alt="" />
           </>
         ) : (

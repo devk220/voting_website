@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React from 'react'
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import { Link,useNavigate } from 'react-router-dom'
 
 
@@ -14,6 +14,7 @@ const Signup = ({onClickHandler,show,hide,togg,visible}) => {
   const [lname, setLname] = useState("")
   const [email, setEmail] = useState("")
   const [pass, setPass] = useState("")
+  const [epic, setEpic] = useState("")
   const [file, setFile] = useState(null)
 
   const fHandler=(e)=>{
@@ -27,6 +28,9 @@ const Signup = ({onClickHandler,show,hide,togg,visible}) => {
   }
   const pHandler=(e)=>{
     setPass(e.target.value)
+  }
+  const epHandler=(e)=>{
+    setEpic(e.target.value)
   }
 
   
@@ -54,6 +58,7 @@ const Signup = ({onClickHandler,show,hide,togg,visible}) => {
     formData.append('fname',fname)
     formData.append('lname',lname)
     formData.append('email',email)
+    formData.append('epic',epic)
     formData.append('pass',pass)
     formData.append('file',file)
 
@@ -73,30 +78,54 @@ const Signup = ({onClickHandler,show,hide,togg,visible}) => {
     }
   };
 
+  useEffect(() => {
+    document.body.style.backgroundColor = '#e5ccff'; // Light blue background color outside the container
+    document.body.style.margin = '0';
+    document.body.style.padding = '0';
+    document.body.style.height = '100vh';
+    document.body.style.display = 'flex';
+    document.body.style.justifyContent = 'center';
+    document.body.style.alignItems = 'center';
+    
+    return () => {
+      document.body.style.backgroundColor = ''; // Reset styles when component unmounts
+      document.body.style.margin = '';
+      document.body.style.padding = '';
+      document.body.style.height = '';
+      document.body.style.display = '';
+      document.body.style.justifyContent = '';
+      document.body.style.alignItems = '';
+    };
+  }, []);
+
   return (
-    <div className='container'>
+    <div className='container2'>
     <h1 style={{textAlign:"center"}}>Signup with your Details</h1>
       <form onSubmit={sHandler}>
         <div className="mb-3">
-          <label htmlFor="firstname" className="form-label">First Name</label>
-          <input type="text"className="form-control" id="firstname" onChange={fHandler}/>
+          <label htmlFor="firstname" className="form-label2">First Name</label>
+          <input type="text"className="form-control2" id="firstname" onChange={fHandler}/>
         </div>
         <div className="mb-3">
-          <label htmlFor="lastname" className="form-label">Last Name</label>
-          <input type="text" className="form-control" id="lastname" onChange={lHandler}/>
+          <label htmlFor="lastname" className="form-label2">Last Name</label>
+          <input type="text" className="form-control2" id="lastname" onChange={lHandler}/>
         </div>
         <div className="mb-3">
-          <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
-          <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onChange={eHandler}/>
+          <label htmlFor="exampleInputEmail1" className="form-label2">Email address</label>
+          <input type="email" className="form-control2" id="exampleInputEmail1" aria-describedby="emailHelp" onChange={eHandler}/>
           <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
         </div>
         <div className="mb-3">
-          <label htmlFor="formFile" className="form-label">Upload your Image</label>
-          <input className="form-control" type="file" id="formFile" onChange={(e)=>{setFile(e.target.files[0])}}/>
+          <label htmlFor="exampleInputEmail1" className="form-label2">EPIC No.</label>
+          <input type="text" className="form-control2" onChange={epHandler}/>
         </div>
         <div className="mb-3">
-          <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-          <input type={togg} className="form-control" id="exampleInputPassword1" onChange={pHandler}/>
+          <label htmlFor="formFile" className="form-label2">Upload your Image</label>
+          <input className="form-control2" type="file" id="formFile" onChange={(e)=>{setFile(e.target.files[0])}}/>
+        </div>
+        <div className="mb-3">
+          <label htmlFor="exampleInputPassword1" className="form-label2">Password</label>
+          <input type={togg} className="form-control2" id="exampleInputPassword1" onChange={pHandler}/>
           <p onClick={onClickHandler}>{visible ? show : hide}</p>
         </div>
         <button type="submit" className="btn btn-primary">Signup</button> 
