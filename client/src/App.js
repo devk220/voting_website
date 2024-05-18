@@ -14,6 +14,9 @@ import Contact from './components/Contact';
 import About from './components/About';
 import Result from './components/Result';
 import ThankYou from './components/ThankYou';
+import Guidelines from './components/Guidelines';
+import FAQs from './components/FAQs';
+import RegistrationForm from './components/RegistrationForm';
 
 function App() {
 
@@ -85,6 +88,9 @@ function App() {
           <Route path='/errorface' element={<ErrorFace/>}/>
           <Route path='/correctface' element={<CorrectFace/>}/>
           <Route path='/thankyou' element={<ThankYou/>}/>
+          <Route path='/guidelines' element={<Guidelines/>}/>
+          <Route path='/faqs' element={<FAQs/>}/>
+          <Route path='/registrationform' element={<RegistrationForm/>}/>
         </Routes>
       </Router>
     </div>
