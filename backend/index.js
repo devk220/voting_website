@@ -34,6 +34,10 @@ const addUser = async (fname, lname, email, epic , pass, image) => {
   });
 };
 
+// app.get('/',(req,res)=>{
+//     res.send("<h1>The server is working</h1>")
+// })
+
 app.post('/register', upload.single('file'), async (req, res) => {
   try {
     let fname = req.body.fname;
