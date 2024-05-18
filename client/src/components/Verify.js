@@ -58,7 +58,7 @@ const Verify = ({ loggedIn }) => {
             setIsVerifying(false);
 
             if (data.redirect) {
-              window.location.href = 'http://localhost:3000' + data.redirect;
+              window.location.href = 'https://voting-website-frontend.vercel.app' + data.redirect;
             }
           })
           .catch(error => {
