@@ -49,7 +49,7 @@ const Verify = ({ loggedIn }) => {
         const base64Image = users.image;
         formData.append('base64Image', base64Image);
 
-        fetch('http://127.0.0.1:5000/upload', {
+        fetch('https://voting-website-python.vercel.app/upload', {
           method: 'POST',
           body: formData
         })
