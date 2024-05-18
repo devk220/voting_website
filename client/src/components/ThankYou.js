@@ -7,7 +7,7 @@ const ThankYou = () => {
     useEffect(() => {
         const timer = setTimeout(() => {
             navigate('/result');
-        }, 5000);
+        }, 3000);
         return () => {
             clearTimeout(timer);
         };

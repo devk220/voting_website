@@ -45,16 +45,29 @@ function App() {
     setTogg(visible ? 'password' : 'text');
   }
 
-  const chartData={
-    labels:["N.Modi(BJP)","M.Banerjee(TMC)","R.Gandhi(Cong)","A.Kejriwal(AAP)"],
+  const [votes, setVotes] = useState({
+    BJP: 0,
+    Trinamool: 0,
+    Congress: 0,
+    AAP: 0,
+  });
 
-    datasets:[
+  const handleVote = (party) => {
+    setVotes((prevVotes) => ({
+      ...prevVotes,
+      [party]: prevVotes[party] + 1,
+    }));
+  };
+
+  const chartData = {
+    labels: ['BJP', 'Trinamool', 'Congress', 'AAP'],
+    datasets: [
       {
-        label:"Votes",
-        data:[50,30,80,60]
-      }
-    ]
-}
+        label: 'Votes',
+        data: [votes.BJP, votes.Trinamool, votes.Congress, votes.AAP]
+      },
+    ],
+  };
 
   return (
     <div style={{position:"relative",height:"100vh"}}>
@@ -64,7 +77,7 @@ function App() {
           <Route path='/verify' element={<Verify loggedIn={loggedIn}/>}/>
           <Route path='/login' element={<Login handleLogin={handleLogin} onClickHandler={onClickHandler} show={show} hide={hide} togg={togg} visible={visible}/>}/>
           <Route path='/signup' element={<Signup loggedIn={loggedIn} onClickHandler={onClickHandler} show={show} hide={hide} togg={togg} visible={visible} />}/>
-          <Route path='/mainpage' element={<MainPage/>}/>
+          <Route path='/mainpage' element={<MainPage onVote={handleVote}/>}/>
           <Route path='/profile' element={<Profile user={user} loggedIn={loggedIn}/>}/>
           <Route path='/about' element={<About/>}/>
           <Route path='/contact' element={<Contact/>}/>

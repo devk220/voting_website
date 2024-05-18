@@ -1,9 +1,9 @@
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
-const MainPage = () => {
+const MainPage = ({onVote}) => {
 
   document.title="Indian Voting Website | Vote Here"
 
@@ -38,16 +38,17 @@ const MainPage = () => {
     {
       image: "./images/Arvind Kejriwal.jpg",
       Name: "Arvind Kejriwal",
-      Party: "Aam Aadmi Party",
+      Party: "AAP",
       Logo: "./images/Aap.webp",
     },
   ];
 
   const navigate=useNavigate()
 
-  const onclickHandler=()=>{
+  const onclickHandler=(partyName)=>{
     if(window.confirm("Are you sure you wanna vote this candidate?"))
       {
+        onVote(partyName);
         navigate('/thankyou')
       }
   }
@@ -65,7 +66,7 @@ const MainPage = () => {
               <img src={item.Logo} alt={item.Party} style={{height:"70px"}}/>
               <h6>{item.Party}</h6>
             </p>
-            <button className="btn btn-danger" style={{fontFamily:"sans-serif",fontWeight:"bolder",width:"8em"}} onClick={onclickHandler}>
+            <button className="btn btn-danger" style={{fontFamily:"sans-serif",fontWeight:"bolder",width:"8em"}} onClick={()=>onclickHandler(item.Party)}>
               VOTE
             </button> 
           </div>

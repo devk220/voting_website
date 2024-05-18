@@ -7,7 +7,11 @@ const Contact = () => {
   return (
     <div>
     <Navbar/>
-    <h1>Get in touch with us here</h1>
+    <h1>Instagram</h1>
+    <h1>Facebook</h1>
+    <h1>Website</h1>
+    <h1>Email</h1>
+    <h1>Toll-free</h1>
     <Footer/>
     </div>
   )
